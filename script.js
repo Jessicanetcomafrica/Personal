@@ -5,51 +5,40 @@ const sender = params.get("from") || "someone who is completely gone for you";
 
 const questions = [
   {
-    prompt: "When I see your name pop up, my heart basically...",
+    prompt: "Quand tu me vois marcher vers toi, ta premiere pensee est probablement...",
     answers: [
-      { label: "Runs a soft reboot", response: "Same. Immediate system-wide butterflies." },
-      { label: "Starts acting suspiciously adorable", response: "Objectively the correct outcome." },
-      { label: "Pretends to stay calm and absolutely fails", response: "A very elegant emotional crash." },
-      { label: "Opens twenty imaginary tabs about our future", response: "Romantic overthinking counts as a love language." }
+      { label: "Oh, here comes trouble.", response: "The best kind of trouble, surely." },
+      { label: "Okay, let me try to act normal.", response: "Don't worry, I'm struggling with that too." },
+      { label: "She's definitely going to make me laugh.", response: "Guilty as charged. It's my favorite mission." }
     ]
   },
   {
-    prompt: "If we were a coding pattern, we'd be...",
+    prompt: "Si nous etions un type de moment precis, nous serions...",
     answers: [
-      { label: "A perfect callback", response: "Because every moment with you returns joy." },
-      { label: "Two functions with amazing compatibility", response: "Reusable, reliable, and absurdly cute." },
-      { label: "A merge with zero conflicts", response: "Rare, suspicious, and deeply beautiful." },
-      { label: "The feature nobody knew they needed", response: "And now life makes no sense without it." }
+      { label: "An unexpected long weekend.", response: "Rare, exciting and exactly what you needed." },
+      { label: "The song you can't stop playing.", response: "Stuck in your head in the best way possible." },
+      { label: "A conversation that never actually ends.", response: "The kind where you look at the clock and it's suddenly 2 AM." }
     ]
   },
   {
-    prompt: "The official diagnosis for what you do to me is...",
+    prompt: "Sois honnete, quand nous sommes assis ensemble au bureau, le meilleur moment c'est...",
     answers: [
-      { label: "Chronic smiling", response: "Side effects include staring at the screen like an idiot." },
-      { label: "Emotionally devastating levels of charm", response: "Prognosis: hopelessly devoted." },
-      { label: "A complete takeover of my internal monologue", response: "Every thought now has your name in it." },
-      { label: "A beautiful bug I never want fixed", response: "This one stays in production forever." }
+      { label: "Our highly productive 'collaboration' sessions.", response: "By 'collaboration,' I mean us just flirting and doing zero work? Agreed." },
+      { label: "Me watching you make financially questionable decisions.", response: "I'm just the supportive audience for your shopping sprees. No regrets." },
+      { label: "The fact that I am your favorite office Resource.", response: "Definitely your favourite" }
     ]
   }
 ];
 
 const poemLines = [
-  `const you = "${recipient}";`,
+  "Pour une femme qui sait ce qu'elle veut,",
+  "Tu es un délice, un éclat, un vœu.",
   "",
-  "function explainMyHeart() {",
-  '  return [',
-  '    "If fate were code, I would read every line again",',
-  '    "just to find the exact moment it led me to you.",',
-  '    "You arrive in my days like light across a dark screen,",',
-  '    "softening the sharp parts, making everything glow.",',
-  '    "You are the calm in my noise, the poetry in my logic,",',
-  '    "the one line I never want to delete or rewrite.",',
-  '    "So if you ever wonder what my favorite thing is,",',
-  '    `it is still, and will keep being, you.`',
-  '  ].join("\\n");',
-  "}",
+  "Que tes rêves les plus fous deviennent réalité,",
+  "Portés par ta force et ta volonté.",
   "",
-  "console.log(explainMyHeart());"
+  "Et si dans tes projets, il reste une place,",
+  "Je serais ravi que tu penses à moi."
 ];
 
 const dedicationPill = document.getElementById("dedication-pill");
