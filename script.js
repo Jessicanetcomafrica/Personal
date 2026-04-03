@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 
-const recipient = params.get("to") || "my favorite human";
-const sender = params.get("from") || "someone who is completely gone for you";
+const recipient = params.get("to") || "Anna";
+const sender = params.get("from") || "WOBO, your new favourite developer";
 
 const questions = [
   {
@@ -58,8 +58,8 @@ const toast = document.getElementById("toast");
 let currentQuestion = 0;
 
 dedicationPill.textContent = `For ${recipient}`;
-poemTitle.textContent = `for ${recipient}`;
-signature.textContent = `Love, ${sender}`;
+poemTitle.textContent = `for ${recipient}...`;
+signature.textContent = sender;
 poemBlock.textContent = poemLines.join("\n");
 
 function renderQuestion() {
