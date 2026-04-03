@@ -1,0 +1,303 @@
+:root {
+  --bg: #120f17;
+  --panel: rgba(20, 15, 24, 0.72);
+  --panel-strong: rgba(32, 23, 37, 0.92);
+  --text: #f9f0ea;
+  --muted: #cfbec4;
+  --accent: #ff8f70;
+  --accent-soft: #ffd9cf;
+  --line: rgba(255, 255, 255, 0.12);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255, 143, 112, 0.16), transparent 32%),
+    linear-gradient(135deg, #0f0b13 0%, #17111d 46%, #261923 100%);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.backdrop {
+  position: fixed;
+  inset: auto;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.55;
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite alternate;
+}
+
+.backdrop-left {
+  top: -10rem;
+  left: -12rem;
+  background: rgba(255, 143, 112, 0.18);
+}
+
+.backdrop-right {
+  right: -10rem;
+  bottom: -14rem;
+  background: rgba(255, 210, 180, 0.12);
+  animation-delay: 2.5s;
+}
+
+.shell {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0 3rem;
+}
+
+.hero,
+.card {
+  backdrop-filter: blur(18px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 2rem;
+  border-radius: 32px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.eyebrow,
+.step-label,
+.poem-intro,
+.pill {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--accent-soft);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+h1 {
+  margin-top: 0.6rem;
+  font-size: clamp(3.6rem, 8vw, 6.8rem);
+}
+
+.hero-copy {
+  max-width: 44rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 1.4rem;
+}
+
+.pill,
+.ghost-button,
+.primary-button,
+.answer-button {
+  border-radius: 999px;
+}
+
+.pill {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 28px;
+  animation: fadeUp 0.9s ease both;
+  animation-delay: 0.15s;
+}
+
+#question-text,
+#poem-title {
+  margin-top: 0.4rem;
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.answer-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  color: var(--text);
+  padding: 1rem 1.1rem;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.answer-button:hover,
+.answer-button:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 143, 112, 0.6);
+  background: linear-gradient(180deg, rgba(255, 143, 112, 0.18), rgba(255, 255, 255, 0.06));
+  outline: none;
+}
+
+.answer-feedback {
+  min-height: 1.5rem;
+  margin: 1rem 0 0;
+  color: var(--accent-soft);
+}
+
+.terminal-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.terminal-bar span {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.terminal-bar span:first-child {
+  background: #ff7f6a;
+}
+
+.terminal-bar span:nth-child(2) {
+  background: #ffc857;
+}
+
+.terminal-bar span:nth-child(3) {
+  background: #61d095;
+}
+
+.poem-block {
+  overflow-x: auto;
+  margin: 1.4rem 0 0;
+  padding: 1.4rem;
+  border-radius: 22px;
+  background: var(--panel-strong);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--accent-soft);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.signature {
+  margin: 1rem 0 1.4rem;
+  color: var(--muted);
+}
+
+.ghost-button,
+.primary-button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.9rem 1.2rem;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease, border-color 180ms ease;
+}
+
+.ghost-button {
+  background: transparent;
+  color: var(--text);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #ff8f70, #ffb49c);
+  color: #201317;
+  border-color: transparent;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible,
+.primary-button:hover,
+.primary-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(255, 143, 112, 0.55);
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%) translateY(120%);
+  padding: 0.9rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(16, 11, 19, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  transition: transform 220ms ease;
+}
+
+.toast.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(2rem, 1.5rem, 0) scale(1.08);
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding-top: 1.5rem;
+    width: min(100% - 1rem, 100%);
+  }
+
+  .hero,
+  .card {
+    border-radius: 24px;
+    padding: 1.25rem;
+  }
+
+  .answer-grid {
+    grid-template-columns: 1fr;
+  }
+}
